@@ -36,7 +36,7 @@ class SayPlatformBase {
     this.child.stdin.setEncoding('ascii')
     this.child.stderr.setEncoding('ascii')
 
-    pipedData = iconv.encode(pipedData, 'gbk')    // this line is for Chinese TTS with GBK encoding
+    pipedData = iconv.encode(pipedData, 'gbk')    // add this line is for Chinese support in TTS with GBK encoding
     if (pipedData) {
       this.child.stdin.end(pipedData)
     }
@@ -98,7 +98,7 @@ class SayPlatformBase {
     this.child.stdin.setEncoding('ascii')
     this.child.stderr.setEncoding('ascii')
 
-    pipedData = iconv.encode(pipedData, 'gbk')    // this line is for Chinese GBK encoding, but has not been tested
+    pipedData = iconv.encode(pipedData, 'gbk')    // add this line is for Chinese support (not tested)
     if (pipedData) {
       this.child.stdin.end(pipedData)
     }
